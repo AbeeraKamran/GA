@@ -17,28 +17,19 @@ Developer @GA in NYC
      box-sizing: border-box; /* IE */
 }
 
-/* Clear fix hack */
+/* Clearfix */
+.clearfix:before,
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
 }
 
 .clear {
 	clear: both;
-}
-
-.alignright {
-	float: right; 
-	padding: 0 0 10px 10px; /* note the padding around a right floated image */
-}
-
-.alignleft {
-	float: left; 
-	padding: 0 10px 10px 0; /* note the padding around a left floated image */
 }
 
 /******************************************
@@ -50,7 +41,7 @@ body {
      font-size: 12px;
      line-height: 1.4;
      font-family: Georgia, serif; 
-     background-size: cover;
+     
 }
 
 
@@ -63,7 +54,8 @@ body {
 
 .banner {
       height: 434px; 
-      background-image: url(../images/coworking.jpg)
+      background: url('../images/coworking.jpg') no-repeat;
+      background-size: cover;
 }
 
 header {
@@ -73,27 +65,30 @@ header {
 
 }
 
-h1 {
+header h1 {
      color: #F8FF00;
      font-size: 42px;
      text-align: left;
-     height: 150px;
      float: left;
      margin: 20px 0 0 30px;
 }
 
-.banner h2 {
+.subhead h2 {
      font-size: 30px;
      font-style: italic;
+     text-align: center;
      color: #000;
      background-color: #C6C6C6;
-     height: 50px;
      margin: 0;
+     padding: 5px;
+     clear: both;
+     
 }
 
 h3 {
      font-family: 'Open Sans Condensed';
-     font-style: bold
+     font-style: bold;
+     margin:0 0 0 10px;
 }
 
 .tagline-del {
@@ -102,7 +97,9 @@ h3 {
 }
 
 .tagline-clr {
-    text-decoration: underline;
+    border-bottom: 3px solid #F8FF00;
+    text-decoration: none;
+
 }
 
 nav {
@@ -117,6 +114,10 @@ nav li a {
      text-decoration: none;
 }
 
+.nav-em {
+     font-weight: bold;
+}
+
 li {
      list-style: none;
      float: left;
@@ -126,11 +127,20 @@ li {
 #blurb {
      height: 350px;
      width: 330px;
-     background-color: #C6C6C6;
-     opacity: .75;
+     background-color:rgba(255, 255, 255, .8);
      padding: 20px;
      float: right;
      margin: 10px 70px 10px 0;
+}
+
+#blurb p {
+     font-family: 'Open Sans Condensed';
+     font-size: 18px;
+     padding: 15px;
+}
+
+#blurb h3 {
+     font-size: 25px;
 }
 
 .infobox {
@@ -138,17 +148,40 @@ li {
 }
 
 .infobox h5 {
-     font-size: 30px
+     font-size: 30px;
+     margin: 10px 20px 0 20px;
 }
 
 .infobox p {
-     font-size: 14px;
-     font-family: 'Open Sans Condensed'
-     
+     font-size: 18px;
+     font-family: 'Open Sans Condensed';
+     padding: 20px;
+     width: 200px;
 }
 
-footer {
+.button {
+     font-family: 'Open Sans Condensed';
+     font-size: 20px;
+     background-color: #C6C6C6;
+     height: 60px;
+     width: 200px; 
+     padding: 15px;
+     text-align: center;
+}
 
+.wrapper .button {
+     background-color: #F8FF00;
+     height: 60px;
+     width: 250px; 
+     margin-left: 10px;
+
+     
+}
+  
+ 
+
+footer {
+     clear: both;
 }
 
 /******************************************
